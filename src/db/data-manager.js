@@ -7,15 +7,24 @@ export class AppDataManager {
     }
 
     async getNewsData() {
-        return  await this.appHttpRequestObj.getAllSectionNewsData()
+        try {
+            return  await this.appHttpRequestObj.getAllSectionNewsData()
+        } catch(err) {
+            throw err;
+        }
     }
 
     async updateNewNewsData(requestObj) {
-        return await this.appHttpRequestObj.getMostViewSectionNewsData({
-            title: 'foo',
-            body: 'bar',
-            userId: 1
-        });
+        try {
+            return await this.appHttpRequestObj.getMostViewSectionNewsData({
+                title: 'foo',
+                body: 'bar',
+                userId: 1
+            });
+        } catch(err) {
+            throw err;
+        }
+
     }
 
     

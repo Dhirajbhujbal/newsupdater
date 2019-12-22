@@ -15,4 +15,12 @@ export class AppConstant {
         CONTENT_TYPE: 'application/json; charset=UTF-8',
         AUTHORIZATION: ''
     }
+
+    static BUTTON_TEXT = {
+        OK: 'OK'
+    }
+
+    static ERROR_MSG = {
+        NO_INTERNET_CONNECTION_AVIALBLE: 'Not internet connection is avialble'
+    }
 }

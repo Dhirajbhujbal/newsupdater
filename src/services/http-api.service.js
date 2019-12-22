@@ -9,11 +9,19 @@ export class HttpApiService extends HttpBase {
     }
     
     getAllSectionNewsData() {
-        return this.httpGetApiReuest(AppConstant.API_NAMES.NEWS_API);
+        try {
+            return this.httpGetApiReuest(AppConstant.API_NAMES.NEWS_API);
+        }  catch(err) {
+            throw err;
+        }
     }
 
     getMostViewSectionNewsData(requesttObj) {
-        return this.httpPostApiReuest(AppConstant.API_NAMES.GET_MOST_VIEWD_SECTION_NEWS, requesttObj);
+        try {
+            return this.httpPostApiReuest(AppConstant.API_NAMES.GET_MOST_VIEWD_SECTION_NEWS, requesttObj);
+        } catch(err) {
+            return err;
+        }
     }
 
 }
