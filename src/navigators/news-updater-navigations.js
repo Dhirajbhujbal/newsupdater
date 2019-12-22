@@ -1,7 +1,5 @@
 
 import { createStackNavigator } from 'react-navigation-stack';
-import React from 'react';
-import { View, Text, Button } from 'react-native';
 import { AppNavigationConstant } from './navigation.constant';
 import { AppDashboard } from '../pages/dashboard/news-updater.dashboard';
 import { AppNewsDetails } from '../pages/newsdetails/news-updater.news.details';

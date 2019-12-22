@@ -3,9 +3,11 @@ import { View, Text, Button, Image, ScrollView } from 'react-native';
 import { AppNavigationConstant } from '../../navigators/navigation.constant';
 import { AppHeader } from '../header/app-header';
 import { moderateScale } from '../scale';
+import { newsDetailsStyle } from './news-details.style'
 
 export class AppNewsDetails extends Component {
 
+    style = newsDetailsStyle()
     constructor(props) {
         super(props);
         this.state = {
@@ -18,18 +20,18 @@ export class AppNewsDetails extends Component {
             <>
                 <AppHeader {...this.props} enableBackImage={true} screenName={'News Details'} />
                 <ScrollView>
-                    <View style={{ flex: 1 , alignItems:'center' , marginHorizontal: moderateScale(12)}} >
-                        <Text style={{ fontSize: moderateScale(17), fontWeight:'bold' }}>{this.state.selectedNewsData.title}</Text>
+                    <View style={this.style.outerViewStyle} >
+                        <Text style={this.style.newsHeader}>{this.state.selectedNewsData.title}</Text>
                         <Image source={{ uri: this.state.selectedNewsData.urlToImage}} 
-                            style={{ height: moderateScale(400) ,width: '100%', resizeMode:'contain' }}
+                            style={this.style.imageView}
                         />
                         <Text>Summary</Text>
-                        <Text style={{ fontSize: moderateScale(15), fontStyle:'italic' }}>
+                        <Text style={this.style.summaryText}>
                          {this.state.selectedNewsData.description}
                         </Text>
 
                         <Text>Details</Text>
-                        <Text style={{ fontSize: moderateScale(15), fontStyle:'italic' }}>
+                        <Text style={this.style.detailsText}>
                          {this.state.selectedNewsData.content}
                         </Text>
 
