@@ -5,7 +5,7 @@ import { moderateScale } from '../../scale';
 import forwordImage from '../../../assets/images/forword.png';
 import calenderImage from '../../../assets/images/calender.png';
 import { AppNavigationConstant } from '../../../navigators/navigation.constant';
-import { getOnlyUpdatedData, loadNewsData, getUpdatedNewsData } from '../../../store/actions/app-actions';
+import { loadNewsData, getUpdatedNewsData } from '../../../store/actions/app-actions';
 import { connect } from 'react-redux';
 import { dashboardStyle } from '../dashboard.style';
 
@@ -25,7 +25,7 @@ class AppNewsUpdaterCards extends Component{
         this.props.getUpdatedNewsData()
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         this.props.loadNewsData();
     }
 
@@ -103,4 +103,4 @@ function mapStateToProps(state) {
 
 }
 
-export default connect(mapStateToProps, { getOnlyUpdatedData, loadNewsData, getUpdatedNewsData } )(AppNewsUpdaterCards)
+export default connect(mapStateToProps, { loadNewsData, getUpdatedNewsData } )(AppNewsUpdaterCards)
