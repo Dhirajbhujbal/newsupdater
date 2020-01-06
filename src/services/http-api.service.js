@@ -10,7 +10,7 @@ export class HttpApiService extends HttpBase {
     
     getAllSectionNewsData() {
         try {
-            return this.httpGetApiReuest(AppConstant.API_NAMES.NEWS_API);
+            return this.httpGetApiReuest(AppConstant.API_NAMES.NEWS_API, 'sports.json?');
         }  catch(err) {
             throw err;
         }
@@ -18,7 +18,7 @@ export class HttpApiService extends HttpBase {
 
     getMostViewSectionNewsData(requesttObj) {
         try {
-            return this.httpPostApiReuest(AppConstant.API_NAMES.GET_MOST_VIEWD_SECTION_NEWS, requesttObj);
+            return this.httpGetApiReuest(AppConstant.API_NAMES.GET_MOST_VIEWD_SECTION_NEWS, 'mostviewed/all-sections/7.json?');
         } catch(err) {
             return err;
         }
