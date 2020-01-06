@@ -16,6 +16,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { AppReducer } from './src/store/reducers/app-main.reducers';
 import thunk from 'redux-thunk';
+import { AsyncStorage } from 'react-native';
 
 let AppContainer;
 
@@ -29,6 +30,7 @@ export class App extends Component {
     }
 
     initAppConfiguration = () => {
+      AsyncStorage.setItem('AppKey', 'Dh501AiuGbuoqf9uDUhccFPU85g2RNmg');
       AppContainer = createAppContainer(AppNavigations.Nav())
     }
     

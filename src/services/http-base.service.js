@@ -2,13 +2,15 @@
 import { AppConstant } from '../common/app.constant';
 import newsData from '../resource/news-data.json';
 import updateNewsData from '../resource/updated-news-data.json';
+import { AsyncStorage } from 'react-native';
 
 // sports.json?api-key=Dh501AiuGbuoqf9uDUhccFPU85g2RNmg
 
 export class HttpBase {
 
     async httpGetApiReuest (endPoint, queryString) {
-        return fetch(`${endPoint}${queryString}.json?${this.getApiKeys()}`, {
+        const apiKey = await this.getApiKeys();
+        return fetch(`${endPoint}${queryString}.json?${apiKey}`, {
             method: AppConstant.HTTP_REQUEST_TYPES.GET,
             headers: new Headers()
         }).then(response => {
@@ -48,8 +50,8 @@ export class HttpBase {
         });
     }
 
-    getApiKeys() {
-        return 'api-key=Dh501AiuGbuoqf9uDUhccFPU85g2RNmg'
+    async getApiKeys() {
+        return `api-key=${await AsyncStorage.getItem('AppKey')}`
     }
 
 }
