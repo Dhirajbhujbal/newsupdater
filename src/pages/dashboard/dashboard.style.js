@@ -73,12 +73,13 @@ export const dashboardStyle = () => {
         },
 
         newsDetailsViewA: {
+            flex:1,
             flexDirection:'row', 
             justifyContent:'space-between'
         },
 
         newsDetailsViewB: { 
-            flex:1, 
+            flex:0.4, 
             flexDirection:'row', 
             alignItems:'center', 
             justifyContent:'center'
@@ -90,11 +91,13 @@ export const dashboardStyle = () => {
         },
 
         autherText: {
-            marginTop: moderateScale(5)
+            marginTop: moderateScale(5),
+            fontSize: moderateScale(12)
         },
 
         dateText: { 
-            margin: moderateScale(5)
+            margin: moderateScale(5),
+            fontSize: moderateScale(12)
         }
     });
 

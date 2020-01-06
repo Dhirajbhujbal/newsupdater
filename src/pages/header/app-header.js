@@ -6,6 +6,7 @@ import searchImage from '../../assets/images/search.png';
 import rightMenuImage from '../../assets/images/rightMenu.png';
 import { headerStyle } from './app-header.style';
 import { moderateScale } from '../scale';
+import { AppNavigationConstant } from '../../navigators/navigation.constant';
 
 export class AppHeader extends Component {
 
@@ -24,6 +25,7 @@ export class AppHeader extends Component {
                             this.props.enableBackImage ? 
                             <TouchableOpacity onPress={ () => this.props.navigation.goBack()}>
                                 <Image source={backImage} style={[this.style.imageStyle, { width:moderateScale(10)}]} />
+                                {/* <Text onPress={ () => this.props.navigation.navigate(AppNavigationConstant.routesConstant.ReactHOOKS)} >Hooks</Text> */}
                             </TouchableOpacity> : 
                             <TouchableOpacity>
                                 <Image  source={menuIconImage} style={this.style.childViewLeft}/>

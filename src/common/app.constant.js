@@ -1,8 +1,8 @@
 
 export class AppConstant {
     static API_NAMES = {
-        NEWS_API : 'https://jsonplaceholder.typicode.com/posts', // http://api.nytimes.com/svc/mostpopular/v2/
-        GET_MOST_VIEWD_SECTION_NEWS: 'https://jsonplaceholder.typicode.com/posts' // http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?apikey=sample-key
+        NEWS_API : 'https://api.nytimes.com/svc/topstories/v2/',
+        GET_MOST_VIEWD_SECTION_NEWS: 'http://api.nytimes.com/svc/mostpopular/v2/' // http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?apikey=sample-key
     };
 
     static HTTP_REQUEST_TYPES = {

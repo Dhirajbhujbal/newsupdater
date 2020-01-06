@@ -55,19 +55,19 @@ class AppNewsUpdaterCards extends Component{
                                         {item.item.title}
                                     </Text>
                                     <Text numberOfLines={2} style={this.style.newsDescriptionText}>
-                                        {item.item.description}
+                                        {item.item.abstract}
                                     </Text>
                                     <View style={this.style.newsDetailsViewA}>
-                                        <View style={{ flex:1}}>
+                                        <View style={{ flex:0.6, padding:moderateScale(2)}}>
                                             <Text style={this.style.autherText}>
-                                                {item.item.author}
+                                                {item.item.byline}
                                             </Text>
                                         </View>
                                         <View style={this.style.newsDetailsViewB}>
                                             <Image source={calenderImage} style={this.style.calenderImageView} />
                                             <Text numberOfLines={1} style={this.style.dateText}>
                                                 {
-                                                    item.item.publishedAt.split('T')[0]
+                                                    item.item.published_date.split('T')[0]
                                                 }
                                             </Text>
                                         </View>
